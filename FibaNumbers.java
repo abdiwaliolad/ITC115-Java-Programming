@@ -9,10 +9,10 @@ public class FibaNumbers { // class starts here
 		
 		// Declare  two variables 
 		
-		int fib1 = 0; // first variable fib1 in 
-		int fib2= 1;
+		int fib1 = 0; // first variable in fibonacci sequence fib1 
+		int fib2= 1;  // Second variable in fibonacci Sequence fib2
 		
-		// for loops fibonacci 
+		// for loops fibonacci to 
 		for ( int i = 2; i<= 12; i++) {
 			System.out.println(fib1); //print first fib1
 			int newFib = fib1 + fib2; //initiate newfib and add fib1 and fib2
