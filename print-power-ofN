@@ -1,0 +1,35 @@
+public class printPowerOfN {
+	/*
+	 * HomeWork: Printing power Of Number 
+	 * Author: Abdiwali Olad 
+	 * Date: 10.15.2018
+	 */
+
+	public static void main(String[] args) {
+
+		//  calling the printpowerofn in the main with two arguments , intiliate
+		printPowerOfN(2, 7);
+
+		//calling the printpowerofn in the main with two arguments , intiliate
+		printPowerOfN(5, 3);
+
+	}
+
+	public static void printPowerOfN(int number, int p) { // method to give two
+															// parameters number
+															// and p
+
+		for (int i = 0; i <= p; i++) { // for loops to start 0 and do the pow to
+										// increament
+			System.out.print((int) Math.pow(number, i) + ","); // print, cast
+																// from double
+																// to int call
+																// the
+			// math class print number and i which is pow now
+
+		}
+		System.out.println("");// break a new line or start a new line
+
+	}
+
+}
