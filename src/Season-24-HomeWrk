@@ -1,0 +1,50 @@
+/* class: season 
+ * Date: 10.24.2018
+ * Author: Abdiwali Olad
+ */
+import java.util.*; // importing java Package util.
+
+public class seasonAsignment {
+
+	public static void main(String[] args) {
+
+		//String season;// ininiating string
+		Scanner console = new Scanner(System.in); // creating scanner
+
+		System.out.println("Enter a days: "); // prompting system to enter a
+												// days
+
+		int days = console.nextInt(); // this is the line to print 
+
+		System.out.println("Enter a months:"); // prompting months
+
+		int month = console.nextInt(); // this is the line to call
+
+		String result = seasons(month, days); // string to get the result to int.
+
+		System.out.println(result); // printing the result.
+
+	}
+
+	public static String seasons(int month, int days) {// method with getting two parameters int
+
+		if ((month == 3 && days <= 15) || (month < 3) // if the months is equal to march or days are less than or equal
+				|| (month == 12 && days > 15)) { //and months that equal to 12 and days that is greater that
+			return "winter"; // return winter  if all that is in between
+		} else if ((month == 3 && days > 15) || (month > 3 && month < 6)// else if equal
+				|| (month == 6 && days <= 15)) {
+
+			return " spring";// return spring
+
+		} else if ((month == 6 && days >= 16) || (month > 6 && month < 9) //this else if will get whatever is between 6-9monhs and days that is greater thn 16 and less 15
+				|| (month == 9 && days <= 15)) {
+
+			return "summer"; // return summer
+
+		} else { // last statements else  
+			return "Fall";//return fall
+		}
+
+	}
+}
+
