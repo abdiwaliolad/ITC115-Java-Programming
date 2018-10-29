@@ -1,0 +1,48 @@
+/*
+ * Date: 10.18.2018
+ * Project: guesses game Assignment 
+ * Author: Abdiwai Olad
+ */
+import java.util.*; // import the java package
+public class GuessingAssignment {
+	
+	
+	
+
+	public static void main(String[] args) {
+		makeGuesses(); // make
+	}
+	public static void makeGuesses() {// makeguesses method
+		int numGuesses = 0; // count number
+		int guess; // ininiating guess name 
+		
+		do {// do guess = getguess  numGuesses and prompt the guessed number
+			guess = getGuess();
+			numGuesses++; //count and add 1
+			System.out.println("Guess = " + guess);
+		} while (guess < 48);// while guess is >48 count
+		System.out.println("total guesses: = " + numGuesses);// get the total guesses prompt
+	}
+	
+	// get the number the user input
+	public static int getGuess() {
+        
+		Random rand = new Random(); // get random
+        return rand.nextInt(50) + 1; // return random number 1 to 50
+        
+     
+    }
+	
+	// catch if the input is not int
+	public static int getInt(Scanner console, String prompt) {
+        System.out.print(prompt);
+        while (!console.hasNextInt()) {
+            console.next();
+            System.out.println("Not an integer; try again.");
+            System.out.print(prompt);
+        }
+        return console.nextInt();
+    }
+	 
+
+}
