@@ -1,0 +1,106 @@
+This is the Main.Java
+
+/*
+ * Java Projact Name: generic Product 
+ * Author:Abdiwali Olad
+ * Date 11.28.2018 
+ */
+
+public class Main {
+
+	public static void main(String[] args) {
+	
+		
+		
+		GenericProducts myProduct1 = new GenericProducts("Coffee",5.00,"Black American with milk", 1);
+		
+		GenericProducts myProduct2 = new GenericProducts("latte",6.00,"2 shot of coffee with milk ", 2);
+		
+		
+		System.out.println("Product Name: " + myProduct1.getProduct() + "\nPrice: " + myProduct1.getPriceFormatted() +
+				"\nDescription: " + myProduct1.getDescriptiont() + "\nCount Number: " + myProduct1.getProductCount());
+		
+		System.out.println();
+		System.out.println("Product Name: " + myProduct2.getProduct() + "\nPrice: " + myProduct2.getPriceFormatted() +
+				"\nDescription: " + myProduct2.getDescriptiont() + "\nCount Number: " + myProduct2.getProductCount());
+
+		myProduct1.toString();
+		myProduct2.toString();
+	}
+
+}
+
+This is the Class GenericProduct
+
+import java.text.NumberFormat;
+
+
+public class GenericProducts {
+	
+	//fields set to private so that now one will change it
+	private String product;
+	private double price;
+	private String description;
+	private int productCount;
+	
+	
+	// creating a construtor method
+	
+	public GenericProducts(String inputProduct, double inputPrice,String inputDescription, int iptProductCount){
+		
+		this.product = inputProduct;
+		this.price = inputPrice;
+		this.description = inputDescription;
+		this.productCount = iptProductCount;
+	}
+	
+	//product getter and setter method
+	public String getProduct(){
+		return product;
+	}
+	
+	public void setProduct(String product){
+		this.product = product;
+	}
+	
+	
+	// creating getter and formatted output of the pric
+	 public String getPriceFormatted() 
+	    {
+	        String formattedPrice = NumberFormat.getCurrencyInstance().format(this.price);
+	        return formattedPrice;
+	    } 
+	public void setPriceFormatted(double price){
+		
+		this.price = price;
+		
+	}
+	
+	
+	// creating Description getter and setter method
+	
+	public String getDescriptiont(){
+		return description;
+	}
+	
+	public void setDescription(String description){
+		this.description = description;
+	}
+	
+	// creating getter and setter method 
+	public int getProductCount(){
+		return productCount;
+	}
+	
+	public void setProductCount(int productCount){
+		this.productCount = productCount;
+	}
+	
+	// Tostring
+	@Override
+	public String toString(){
+		return "Product Name: " + product + "Price: " + price +
+				"Description: " + description + "Count Number: " + productCount;
+		
+	}
+	
