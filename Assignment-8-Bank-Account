@@ -1,0 +1,73 @@
+/*
+ * Projact Name: BankAcount 
+ * Author Name: Abdiwali Olad
+ * Date: 12.03.2018
+ */
+public class bankMain {
+
+	public static void main(String[] args) {
+		
+		
+		//create bank account 1
+		BankAcount myAccount = new BankAcount("Abdiwali", 200, 2.50);
+		System.out.println("**You're Account Information**");
+		System.out.println("-----------------------------");
+		
+		System.out.println(myAccount); // print account 
+		System.out.println();
+		//creating bank account 2
+		BankAcount myAccount1 = new BankAcount("John", 500, 2.50);
+		System.out.println(myAccount1);
+		System.out.println();
+		// creating bank account 3
+		BankAcount myAccount2 = new BankAcount("Stani", 600, 2.50);
+		System.out.println(myAccount2);
+
+	}
+
+}
+
+/// Account class//////////////
+
+public class BankAcount {
+
+	// fields
+	private String name;
+	private double balance = 0;
+	private double transactionFee = 0.0;
+
+	// constructs a bank with a given balance
+	public BankAcount(String initialName, double initialBalance, double trnsFee) {
+
+		this.name = initialName;
+		this.balance = initialBalance;
+		this.transactionFee = trnsFee;
+
+	}
+	// deposit 
+	public void deposit(double amount) {
+		balance = balance + amount;
+
+	}
+	//withdraw
+	public void withdraw(double amount) {
+		// if the amount + transactionfee is greater than the balance 
+		if (amount + transactionFee > balance) {
+			System.out.println("You don't have enough money");
+		} else {
+			// return balance - amount -transactionfees.
+			balance = balance - amount - transactionFee;
+		}
+	}
+	//set the transaction fee
+	public void setTransactionFee(double n) {
+		transactionFee = n;
+	}
+
+	// toString return name and balance
+
+	public String toString(){
+		return name + ", $" + balance;  // get the name and the balance
+	}
+
+}
