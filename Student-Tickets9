@@ -1,0 +1,110 @@
+/*
+ * project Name: Ticket
+ * Author Name: Abdiwali Olad
+ * Date: 12.10.2018
+ */
+public class ClientStudentTicket {
+
+	public static void main(String[] args) {
+		
+		//create walk up ticket method.
+		Ticket myTicket = new WalkUpTicket(10);
+
+		System.out.println(myTicket.toString());
+		
+		Ticket studTicket1 = new StudentAdvanceTicket(238, 7);
+		Ticket studTicket2 = new StudentAdvanceTicket(239, 11);
+		Ticket advTicket1 = new AdvanceTicket(240, 7);
+		Ticket advTicket2 = new AdvanceTicket(241, 7);
+		System.out.println(studTicket1.toString());
+		System.out.println(studTicket2.toString());
+		System.out.println(advTicket1.toString());
+		System.out.println(advTicket2.toString());
+	}
+}
+
+
+public class Ticket {
+	
+	// fields
+	protected int ticketNumber;
+	protected int ticketPrice;
+	
+	//constructor method to get ticket number
+	public  Ticket(int ticketNumber ){
+		this.ticketNumber = ticketNumber;
+	}
+	
+	//get the price of the ticket
+	public int getPrice(){
+		return ticketPrice;
+		
+		
+	}
+	
+	// set the toString, ticketNumber and price
+	public String toString(){
+		return "Number: " + ticketNumber + ", Price: $" +ticketPrice;
+	}
+
+	
+
+}
+
+////////
+
+public class WalkUpTicket extends Ticket {
+
+	
+	//set the walk up ticket price and set it to $50
+	public WalkUpTicket(int ticketNumber) {
+		super(ticketNumber);
+		this.ticketPrice = 50;
+		
+		
+	}
+
+}
+
+
+
+public class AdvanceTicket extends Ticket {
+	//method with two argument to super class and if the days advance >= 10 set the price $30
+	// else ticketprice $40
+	public AdvanceTicket(int ticketNumber, int daysInAdvance) {
+		super(ticketNumber);
+		
+		if(daysInAdvance >= 10 ){
+			this.ticketPrice = 30;
+			
+		}else{
+			this.ticketPrice = 40;
+		}
+		
+		
+	}
+
+}
+
+
+
+public class StudentAdvanceTicket extends AdvanceTicket {
+
+	//student advance ticket
+	public StudentAdvanceTicket(int ticketNumber, int daysInAdvance) {
+		super(ticketNumber, daysInAdvance);
+		
+		this.ticketPrice = super.getPrice() / 2;// price is half, student advance ticket
+		
+		
+	}
+	//override to tostring
+	@Override
+	public String toString() {
+		return super.toString() + " (ID required)"; //it required student ticket for this class, for every student that using student advance ticket
+	}
+  
+  
+  
+  
+  
